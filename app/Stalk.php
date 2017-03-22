@@ -16,4 +16,9 @@ class Stalk extends Model
     {
         return $query->whereNull('deletedAt');
     }
+
+    public function UVaUser()
+    {
+        return $this->hasOne('App\UVaUser', 'uvaID', 'uvaID');
+    }
 }

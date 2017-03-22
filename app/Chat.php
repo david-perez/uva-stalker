@@ -14,6 +14,6 @@ class Chat extends Model
 
     public function stalks()
     {
-        return $this->hasMany('App\Stalk', 'chat', 'chatID');
+        return $this->hasMany('App\Stalk', 'chat', 'chatID')->notDeleted();
     }
 }

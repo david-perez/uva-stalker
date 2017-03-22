@@ -17,14 +17,14 @@ class UnStalkCommand extends Command
         $username = explode(' ', trim($arguments))[0];
 
         if (empty($username)) {
-            $this->replyWithMessage(['text' => "Please provide the UVa username of the user you want to stop stalking. Type in\n /unstalk <username>"]);
+            $this->replyWithMessage(['text' => "Please provide the UVa username of the user you want to stop stalking. Type in\n /unstalk *<username>*", 'parse_mode' => 'Markdown']);
             return;
         }
 
         $hunter = new Hunter;
         $uvaID = $hunter->getIdFromUsername($username);
         if ($uvaID === null) {
-            $this->replyWithMessage(['text' => "The UVa username $username does not exist"]);
+            $this->replyWithMessage(['text' => "The UVa username *$username* does not exist", 'parse_mode' => 'Markdown']);
             return;
         }
 
@@ -33,10 +33,10 @@ class UnStalkCommand extends Command
 
         if ($b) {
             $this->replyWithMessage(
-                ['text' => "Stopped stalking!\nYou will no longer receive notifications of any UVa submissions from $username."]
+                ['text' => "Stopped stalking!\nYou will no longer receive notifications of any UVa submissions from *$username*.", 'parse_mode' => 'Markdown']
             );
         } else {
-            $this->replyWithMessage(['text' => "You are not stalking $username\n"]);
+            $this->replyWithMessage(['text' => "You are not stalking *$username*\n", 'parse_mode' => 'Markdown']);
         }
     }
 }

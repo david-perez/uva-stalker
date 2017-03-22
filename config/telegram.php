@@ -60,5 +60,6 @@ return [
         \App\Commands\StartCommand::class,
         \App\Commands\StalkCommand::class,
         \App\Commands\UnStalkCommand::class,
+        \App\Commands\StalkingCommand::class,
     ],
 ];

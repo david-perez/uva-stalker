@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChatsMigration extends Migration
+class CreateTableUVaUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class ChatsMigration extends Migration
      */
     public function up()
     {
-        Schema::create('Chats', function (Blueprint $table) {
-            $table->increments('chatID');
-            $table->timestamp('createdAt')->useCurrent();
+        Schema::create('UVaUsers', function (Blueprint $table) {
+            $table->increments('uvaID');
+            $table->text('username');
         });
     }
 
@@ -26,6 +26,6 @@ class ChatsMigration extends Migration
      */
     public function down()
     {
-        Schema::drop('Chats');
+        Schema::drop('UVaUsers');
     }
 }

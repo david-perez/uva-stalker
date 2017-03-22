@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Stalks extends Migration
+class CreateTableChats extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class Stalks extends Migration
      */
     public function up()
     {
-        Schema::create('Stalks', function (Blueprint $table) {
-            $table->increments('stalkID');
-            $table->integer('chat');
-            $table->integer('uvaID');
+        Schema::create('Chats', function (Blueprint $table) {
+            $table->increments('chatID');
             $table->timestamp('createdAt')->useCurrent();
-            $table->timestamp('deletedAt')->nullable();
-
-            $table->foreign('chat')
-                ->references('chatID')->on('Chats');
         });
     }
 
@@ -32,6 +26,6 @@ class Stalks extends Migration
      */
     public function down()
     {
-        Schema::drop('Stalks');
+        Schema::drop('Chats');
     }
 }

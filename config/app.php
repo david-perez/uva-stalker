@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
+        Illuminated\Database\DbProfilerServiceProvider::class,
 
         /*
          * Application Service Providers...

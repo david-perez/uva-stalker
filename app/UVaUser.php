@@ -10,4 +10,14 @@ class UVaUser extends Model
     protected $primaryKey = 'uvaID';
     protected $fillable = ['uvaID', 'username'];
     public $timestamps = false;
+
+    public function stalks()
+    {
+        return $this->hasMany('App\Stalk', 'uvaID', 'uvaID')->whereNull('deletedAt');
+    }
+
+    public function submissions()
+    {
+        return $this->hasMany('App\Submission', 'user', 'uvaID');
+    }
 }

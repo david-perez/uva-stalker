@@ -55,8 +55,13 @@ class FetchSubmissions extends Command
         foreach ($users as $u) {
             echo "{$u->username}... ";
             $submissions = $this->getSubmissions($u);
-            echo count($submissions) . " new submissions! \n";
 
+            if (count($submissions) > 0) {
+                echo count($submissions) . ' new submissions!';
+            }
+            echo "\n";
+
+            $submissions = array_reverse($submissions); // Process older submissions first.
             foreach ($submissions as $s) {
                 event(new NewSubmission(new Submission($s)));
             }

@@ -15,4 +15,12 @@ class UVaUsersRepository
             'username' => $username
         ]);
     }
+
+    // Retrieve all UVaUsers being stalked by at least someone.
+    public static function stalkedUsers()
+    {
+        return UVaUser::whereHas('stalks', function ($query) {
+            $query->whereNull('deletedAt');
+        })->get();
+    }
 }

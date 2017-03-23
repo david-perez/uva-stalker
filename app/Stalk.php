@@ -21,4 +21,10 @@ class Stalk extends Model
     {
         return $this->hasOne('App\UVaUser', 'uvaID', 'uvaID');
     }
+
+    // We cannot name this method chat() because it enters in conflict with the column name.
+    public function associatedChat()
+    {
+        return $this->belongsTo('App\Chat', 'chat', 'chatID');
+    }
 }

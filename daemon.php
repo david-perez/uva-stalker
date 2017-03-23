@@ -52,7 +52,7 @@ function getUpdates($telegram, $offset)
         echo "\n\n";
 
         // Send the updates to the Laravel application, just as if Telegram had used our webhook.
-        $ch = curl_init('dockerhost/api/test');
+        $ch = curl_init('dockerhost/api/' . getenv('TELEGRAM_BOT_TOKEN'));
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return response instead of printing.

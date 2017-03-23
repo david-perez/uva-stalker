@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/test', 'GetUpdatesController@receive');
+Route::post(getenv('TELEGRAM_BOT_TOKEN'), function (Request $request) {
+    $update = Telegram::commandsHandler(true);
+    return $update;
+});

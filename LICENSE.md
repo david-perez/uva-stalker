@@ -1,4 +1,4 @@
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![GitHub release](https://img.shields.io/github/release/david-perez/uva-stalker.svg)](https://github.com/david-perez/uva-stalker/releases/tag/v1.0)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![GitHub release](https://img.shields.io/github/release/david-perez/uva-stalker.svg)](https://github.com/david-perez/cmu-api/releases/tag/v1.0)
 
 uva-stalker ![Telegram logo](http://i.imgur.com/vvekNMU.png) ![UVa logo](http://i.imgur.com/uyCdP6k.jpg)
 ===================
@@ -130,5 +130,5 @@ $ docker-compose down
 $ docker-compose up -d caddy postgres
 ```
 
-All that's left to do is set up your webhook. You may do so using the [`setWebhook()`](https://core.telegram.org/bots/api#setwebhook) method of the Bot Api. Telegram has a [fantastic guide on webhooks](https://core.telegram.org/bots/webhooks) for detailed instructions.
+All that's left to do is set up your webhook. You may do so using the `[setWebhook](https://core.telegram.org/bots/api#setwebhook)` method of the Bot Api. Telegram has a [fantastic guide on webhooks](https://core.telegram.org/bots/webhooks) for detailed instructions.
 

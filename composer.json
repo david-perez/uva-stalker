@@ -8,7 +8,7 @@
         "php": ">=5.6.4",
         "illuminated/db-profiler": "^1.0",
         "irazasyed/telegram-bot-sdk": "^2.0",
-        "kaspars/hunter": "^1.2",
+        "kaspars/hunter": "dev-master",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0"
     },

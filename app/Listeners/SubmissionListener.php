@@ -48,6 +48,7 @@ class SubmissionListener
         Language::CPLUSPLUS    => 'C++',
         Language::PASCAL       => 'Pascal',
         Language::CPLUSPLUS11  => 'C++11',
+        Language::PYTHON       => 'Python',
     ];
 
     private $hunter;

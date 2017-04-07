@@ -115,7 +115,9 @@ class SubmissionListener
             $user->uvaID,
             $this->getProblemTitleMarkdown($problem),
             $problem['dacu']);
-        $body1 = 'Submitted *' . $submission->time->diffForHumans(Carbon::now(), true) . '* ago in ' . SubmissionListener::LANGUAGES[$submission->language];
+
+        // We subtract five minutes for good measure because UVa OJ server's time is ~6 mins ahead of UTC.
+        $body1 = 'Submitted *' . $submission->time->subMinutes(5)->diffForHumans() . '* in ' . SubmissionListener::LANGUAGES[$submission->language];
         $body2 = sprintf('runtime: _%d ms_, tl: _%d ms_, best: _%d ms_', $submission->runtime, $problem['limit'], $problem['bestRuntime']);
         if ($submission->rank != -1) {
             $body2 .= ", rank: _{$submission->rank}_";

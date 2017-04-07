@@ -16,10 +16,10 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 class SubmissionListener
 {
     const VERDICTS = [
-        Status::NO_VERDICT          => 'NO_VERDICT',
-        Status::SUBMISSION_ERROR    => 'SUBMISSION_ERROR',
-        Status::CANT_BE_JUDGED      => 'CANT_BE_JUDGED',
-        Status::IN_QUEUE            => 'IN_QUEUE',
+        Status::NO_VERDICT          => 'NO VERDICT',
+        Status::SUBMISSION_ERROR    => 'SUBMISSION ERROR',
+        Status::CANT_BE_JUDGED      => 'CANT BE JUDGED',
+        Status::IN_QUEUE            => 'IN QUEUE',
         Status::COMPILATION_ERROR   => 'CE',
         Status::RESTRICTED_FUNCTION => 'RF',
         Status::RUNTIME_ERROR       => 'RE',

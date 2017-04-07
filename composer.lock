@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c44e5489b28a680329e7e645ea243dc",
-    "content-hash": "f6687f8603273957aa4c1ab411686226",
+    "hash": "452d94a2d4cf1557143dd17b7f537b71",
+    "content-hash": "0979b93a311f8e402da3bb9929a471ef",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -329,16 +329,16 @@
         },
         {
             "name": "illuminated/db-profiler",
-            "version": "1.0.18",
+            "version": "1.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-db-profiler.git",
-                "reference": "d2afe333f9cdbfe0ddb70bbe73167ba479673706"
+                "reference": "fdfcb9e4733c6352bc4923e388cdd74a7598224d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-db-profiler/zipball/d2afe333f9cdbfe0ddb70bbe73167ba479673706",
-                "reference": "d2afe333f9cdbfe0ddb70bbe73167ba479673706",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-db-profiler/zipball/fdfcb9e4733c6352bc4923e388cdd74a7598224d",
+                "reference": "fdfcb9e4733c6352bc4923e388cdd74a7598224d",
                 "shasum": ""
             },
             "require": {
@@ -348,7 +348,7 @@
             },
             "require-dev": {
                 "illuminated/helper-functions": "^1.0",
-                "illuminated/testing-tools": "^0.5",
+                "illuminated/testing-tools": "^0.6",
                 "mockery/mockery": "^0.9",
                 "orchestra/testbench": "^3.1",
                 "phpunit/phpunit": "^5.0"
@@ -378,7 +378,7 @@
                 "profiler",
                 "profiling"
             ],
-            "time": "2017-03-15 16:46:39"
+            "time": "2017-03-22 12:11:27"
         },
         {
             "name": "irazasyed/telegram-bot-sdk",
@@ -531,20 +531,23 @@
         },
         {
             "name": "kaspars/hunter",
-            "version": "1.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kasparsklavins/Hunter.git",
-                "reference": "ae5656482cacc2eceecf30d3b305994445d784bc"
+                "reference": "89758ff1e1e361f2be763548ab91e01a632fa569"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kasparsklavins/Hunter/zipball/ae5656482cacc2eceecf30d3b305994445d784bc",
-                "reference": "ae5656482cacc2eceecf30d3b305994445d784bc",
+                "url": "https://api.github.com/repos/kasparsklavins/Hunter/zipball/89758ff1e1e361f2be763548ab91e01a632fa569",
+                "reference": "89758ff1e1e361f2be763548ab91e01a632fa569",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "autoload": {
@@ -552,7 +555,8 @@
                     "src/helpers.php"
                 ],
                 "psr-4": {
-                    "Hunter\\": "src/"
+                    "Hunter\\": "src/",
+                    "Hunter\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -573,20 +577,20 @@
                 "uhunt",
                 "uva"
             ],
-            "time": "2015-09-14 19:33:37"
+            "time": "2017-03-28 15:35:03"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.15",
+            "version": "v5.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ecc6468b8af30b77566a8519ce8898740ef691d7"
+                "reference": "6cf379ec34d08bcdc9c7183e369a8fdf04ade80d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ecc6468b8af30b77566a8519ce8898740ef691d7",
-                "reference": "ecc6468b8af30b77566a8519ce8898740ef691d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6cf379ec34d08bcdc9c7183e369a8fdf04ade80d",
+                "reference": "6cf379ec34d08bcdc9c7183e369a8fdf04ade80d",
                 "shasum": ""
             },
             "require": {
@@ -702,7 +706,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-03-02 14:41:40"
+            "time": "2017-03-21 19:34:41"
         },
         {
             "name": "laravel/tinker",
@@ -764,16 +768,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.36",
+            "version": "1.0.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "d9c1698582dfbfbd092ec9c5c3325f862cdb3297"
+                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d9c1698582dfbfbd092ec9c5c3325f862cdb3297",
-                "reference": "d9c1698582dfbfbd092ec9c5c3325f862cdb3297",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
+                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
                 "shasum": ""
             },
             "require": {
@@ -843,7 +847,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-03-18 16:02:30"
+            "time": "2017-03-22 15:43:14"
         },
         {
             "name": "monolog/monolog",
@@ -1291,16 +1295,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458"
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/0b7bdfb180e72c8d76e75a649ced67e392201458",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
                 "shasum": ""
             },
             "require": {
@@ -1312,9 +1316,9 @@
             },
             "require-dev": {
                 "apigen/apigen": "^4.1",
-                "codeception/aspect-mock": "1.0.0",
+                "codeception/aspect-mock": "^1.0 | ^2.0",
                 "doctrine/annotations": "~1.2.0",
-                "goaop/framework": "1.0.0-alpha.2",
+                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
                 "mockery/mockery": "^0.9.4",
@@ -1369,7 +1373,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-18 15:38:09"
+            "time": "2017-03-26 20:37:53"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3728,7 +3732,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "kaspars/hunter": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

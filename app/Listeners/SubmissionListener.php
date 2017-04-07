@@ -78,11 +78,12 @@ class SubmissionListener
         // Notify all Telegram chats stalking the UVaUser that made the submission.
         $stalks = $submission->uvaUser->stalks;
         foreach ($stalks as $s) {
-            // Only notify if the chat started stalking before the submission was sent.
-            $chat = $s->associatedChat;
-            if ($chat->createdAt < $submission->time) {
+            // Only notify the chat if the stalk was created by the chat before the submission was sent.
+            if ($s->createdAt < $submission->time) {
                 $problem = $this->hunter->problem($submission->problem);
                 $user = $submission->uvaUser;
+
+                $chat = $s->associatedChat;
 
                 Telegram::setAsyncRequest(false)->sendMessage([
                     'chat_id' => $chat->chatID, 'text' => $this->getTextMessage($problem, $submission, $user), 'parse_mode' => 'Markdown'

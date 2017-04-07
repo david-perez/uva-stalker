@@ -67,6 +67,12 @@ class SubmissionListener
     public function handle(NewSubmission $event)
     {
         $submission = $event->submission;
+
+        // Ignore unjudged submissions for which we will receive a verdict later on.
+        if ($submission->verdict === Status::IN_QUEUE || $submission->verdict === Status::NO_VERDICT) {
+            return;
+        }
+
         $submission->save();
 
         // Notify all Telegram chats stalking the UVaUser that made the submission.

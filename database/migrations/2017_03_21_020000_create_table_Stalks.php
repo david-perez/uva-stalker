@@ -15,7 +15,7 @@ class CreateTableStalks extends Migration
     {
         Schema::create('Stalks', function (Blueprint $table) {
             $table->increments('stalkID');
-            $table->integer('chat');
+            $table->bigInteger('chat');
             $table->integer('uvaID');
             $table->timestamp('createdAt')->useCurrent();
             $table->timestamp('deletedAt')->nullable();

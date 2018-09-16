@@ -15,7 +15,7 @@ function getTelegramClient()
 $telegram = getTelegramClient();
 echo "Starting bot with config {$telegram->getMe()}\n";
 
-const S = 1000000; // 1000000 microseconds = 1 scond.
+const S = 1000000; // 1000000 microseconds = 1 second.
 const POLL_DURATION = S; // In microseconds.
 
 printf("\nStart polling Telegram api (will poll for updates every %d ms)\n\n", POLL_DURATION / 1000);
@@ -52,11 +52,17 @@ function getUpdates($telegram, $offset)
         echo "\n\n";
 
         // Send the updates to the Laravel application, just as if Telegram had used our webhook.
-        $ch = curl_init('dockerhost/api/' . getenv('TELEGRAM_BOT_TOKEN'));
+        $ch = curl_init('http://nginx/api/' . getenv('TELEGRAM_BOT_TOKEN'));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return response instead of printing.
         $response = curl_exec($ch);
+
+        if ($response === false) { // Error with cURL. Probably something misconfigured in execution environment.
+            echo 'cURL failed with error '. curl_error($ch) . ":\n" . curl_errno($ch) . "\n";
+        }
+
         curl_close($ch);
 
         // Print Laravel response.

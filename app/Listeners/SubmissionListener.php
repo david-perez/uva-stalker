@@ -2,10 +2,12 @@
 
 namespace App\Listeners;
 
+use Storage;
 use App\Events\NewSubmission;
 use App\Submission;
 use App\UVaUser;
-use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
 use Hunter\Hunter;
 use Hunter\Language;
 use Hunter\Status;
@@ -89,11 +91,46 @@ class SubmissionListener
                     'chat_id' => $chat->chatID, 'text' => $this->getTextMessage($problem, $submission, $user), 'parse_mode' => 'Markdown'
                 ]);
 
+
+                /*
+                 * As of 2018-09-16, curl / fopen / file_get_contents() are unable to interact with uva.onlinejudge.org:443.
+                 * This is because SSL certificate verification fails, and is likely to be an issue with how
+                 * uva.onlinejudge.org is reporting the certificate chain.
+                 *
+                 * curl: (60) SSL certificate problem: unable to get local issuer certificate
+                 *
+                 * The command openssl s_client -connect uva.onlinejudge.org:443 yields
+                 * verify error:num=21:unable to verify the first certificate
+                 *
+                 * Likely related to https://stackoverflow.com/questions/7587851/openssl-unable-to-verify-the-first-certificate-for-experian-url,
+                 * which explains why uva.onlinejudge.org:443 is reachable via a web browser, for example.
+                 *
+                 * Since I don't know a way of indicating Telegram::sendDocument() to disable SSL certificate verification
+                 * when downloading the document from uva.onlinejudge.org, the workaround as of now consists in using
+                 * an HTTP client to download the PDF disabling SSL certificate verification, store it publicly and temporarily
+                 * in the server's filesystem, and provide the public URL of the stored file to Telegram::sendDocument().
+                 *
+                 * Don't forget to symlink Laravel's public storage to public/storage. Refer to https://laravel.com/docs/5.5/filesystem#the-public-disk.
+                 */
+
                 // Send the problem statement as a PDF.
-                $pdfUrl = $this->getProblemPdfUrl($problem['number']);
+                // First, download the PDF from the UVa servers.
+                $client = new Client();
+                $request = new Request('GET', $this->getProblemPdfUrl($problem['number']));
+                $response = $client->send($request, ['verify' => false]);
+                $pdfContents = $response->getBody()->getContents();
+
+                // Temporarily store the PDF in the file system.
+                $filename = $problem['number'] . '.pdf';
+                Storage::disk('public')->put($filename, $pdfContents);
+
+                // Send the message with the PDF.
                 Telegram::setAsyncRequest(false)->sendDocument([
-                    'chat_id' => $chat->chatID, 'document' => $pdfUrl, 'caption' => sprintf("%s - %s", $problem['number'], $problem['title'])
+                    'chat_id' => $chat->chatID, 'document' => Storage::disk('public')->url($filename)
                 ]);
+
+                // Delete the PDF.
+                Storage::disk('public')->delete($filename);
 
                 // If it was an AC, inform of the current rank of the UVaUser.
                 if ($submission->verdict === Status::ACCEPTED) {
@@ -117,7 +154,7 @@ class SubmissionListener
             $problem['dacu']);
 
         // We subtract five minutes for good measure because UVa OJ server's time is ~6 mins ahead of UTC.
-        $body1 = 'Submitted *' . $submission->time->subMinutes(5)->diffForHumans() . '* in ' . SubmissionListener::LANGUAGES[$submission->language];
+        $body1 = 'Submitted on *' . $submission->time . ' UTC* in ' . SubmissionListener::LANGUAGES[$submission->language];
         $body2 = sprintf('runtime: _%d ms_, tl: _%d ms_, best: _%d ms_', $submission->runtime, $problem['limit'], $problem['bestRuntime']);
         if ($submission->rank != -1) {
             $body2 .= ", rank: _{$submission->rank}_";

@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
         Illuminated\Database\DbProfilerServiceProvider::class,
+        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,7 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
-
+        'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
     ],
 
 ];

@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "bugsnag/bugsnag-laravel": "^2.0",
         "illuminated/db-profiler": "^1.0",
         "irazasyed/telegram-bot-sdk": "^2.0",
         "kaspars/hunter": "dev-master",

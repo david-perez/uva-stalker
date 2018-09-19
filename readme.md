@@ -11,8 +11,6 @@ An instance of the bot is already running and can be interacted with by chatting
 
 ![UVaStalker screenshot 1](http://i.imgur.com/9M4fYOM.png)  ![UVaStalker screenshot 2](http://i.imgur.com/XMXjuOZ.png)
 
-----------
-
 Installation
 -------------
 

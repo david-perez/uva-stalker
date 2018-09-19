@@ -62,7 +62,7 @@ https://your-domain-name.com/api/<authorization_token>
 
 Note that you need a domain name with a valid SSL certificate in order to set up the webhook.
 
-If you have a domain name but you don't have a valid SSL certificate, a very easy way to get one is from [Let's Encrypt](https://letsencrypt.org/), and install it on a [Caddy](https://caddyserver.com/) web server.
+If you have a domain name but you don't have a valid SSL certificate, a very easy way to get one is from [Let's Encrypt](https://letsencrypt.org/), and install it on a [Caddy](https://caddyserver.com/) web server. Don't forget to update the `APP_URL` environment variable to `https://your-domain-name`.
 
 All that's left to do is set up your webhook. You may do so using the [`setWebhook()`](https://core.telegram.org/bots/api#setwebhook) method of the Bot Api. Telegram has a [fantastic guide on webhooks](https://core.telegram.org/bots/webhooks) for detailed instructions.
 

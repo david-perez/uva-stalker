@@ -177,7 +177,7 @@ class SubmissionListener
         }
     }
 
-    private function getProblemTitleMarkdown($problem)
+    private function getProblemTitleMarkdown($problem): String
     {
         return sprintf('[%s - %s](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=%d)',
             $problem['number'],

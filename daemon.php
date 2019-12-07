@@ -6,7 +6,8 @@ use Telegram\Bot\Api;
 
 function getTelegramClient()
 {
-    $dotenv = new Dotenv\Dotenv(__DIR__);
+    // TODO: Construction has changed in dotenv v3 (the version Laravel 5.8 uses).
+    $dotenv = Dotenv\Dotenv::create(__DIR__);
     $dotenv->load();
 
     return new Api(getenv('TELEGRAM_BOT_TOKEN'));
@@ -52,7 +53,7 @@ function getUpdates($telegram, $offset)
         echo "\n\n";
 
         // Send the updates to the Laravel application, just as if Telegram had used our webhook.
-        $ch = curl_init('http://nginx/api/' . getenv('TELEGRAM_BOT_TOKEN'));
+        $ch = curl_init('http://caddy/api/' . getenv('TELEGRAM_BOT_TOKEN'));
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));

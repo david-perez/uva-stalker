@@ -8,7 +8,7 @@
         "php": ">=5.6.4",
         "bugsnag/bugsnag-laravel": "^2.0",
         "illuminated/db-profiler": "^6.0",
-        "irazasyed/telegram-bot-sdk": "^2.0",
+        "irazasyed/telegram-bot-sdk": "2.0.x-dev",
         "kaspars/hunter": "dev-master",
         "laravel/framework": "^6.0",
         "laravel/tinker": "~1.0"

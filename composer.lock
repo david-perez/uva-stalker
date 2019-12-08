@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47c381b8cdf725ef2fee9056e64efe88",
+    "content-hash": "c568a255762b28a49c471b59433c0ff4",
     "packages": [
         {
             "name": "bugsnag/bugsnag",
@@ -811,16 +811,16 @@
         },
         {
             "name": "irazasyed/telegram-bot-sdk",
-            "version": "v2.3.0",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/irazasyed/telegram-bot-sdk.git",
-                "reference": "cb65c587fcbb6d74f519402fba429aeab411b4ae"
+                "reference": "6641fed52903ff65ce0bd1fb4ec2978b0d99047f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irazasyed/telegram-bot-sdk/zipball/cb65c587fcbb6d74f519402fba429aeab411b4ae",
-                "reference": "cb65c587fcbb6d74f519402fba429aeab411b4ae",
+                "url": "https://api.github.com/repos/irazasyed/telegram-bot-sdk/zipball/6641fed52903ff65ce0bd1fb4ec2978b0d99047f",
+                "reference": "6641fed52903ff65ce0bd1fb4ec2978b0d99047f",
                 "shasum": ""
             },
             "require": {
@@ -869,7 +869,7 @@
                 "telegram php",
                 "telegram sdk"
             ],
-            "time": "2019-09-08T08:18:42+00:00"
+            "time": "2019-11-09T17:15:48+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -5278,6 +5278,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "irazasyed/telegram-bot-sdk": 20,
         "kaspars/hunter": 20
     },
     "prefer-stable": false,

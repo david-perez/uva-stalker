@@ -8,6 +8,7 @@ use App\Submission;
 use App\UVaUser;
 use Hunter\Hunter;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class FetchSubmissions extends Command
 {
@@ -50,7 +51,8 @@ class FetchSubmissions extends Command
     {
         $users = $this->UVaUsersRepository->stalkedUsers();
 
-        $this->info("Fetching submissions for {$users->count()} UVaUsers.\n");
+        $uvaUserPluralized = Str::plural('UVaUser', $users->count());
+        $this->info("Fetching submissions for {$users->count()} {$uvaUserPluralized}.\n");
 
         foreach ($users as $u) {
             echo "{$u->username}... ";

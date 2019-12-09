@@ -7,16 +7,6 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-
-    /**
      * Register any application services.
      *
      * @return void
@@ -25,5 +15,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->alias('bugsnag.multi', \Illuminate\Contracts\Logging\Log::class);
         $this->app->alias('bugsnag.multi', \Psr\Log\LoggerInterface::class);
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
     }
 }

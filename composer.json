@@ -1,57 +1,65 @@
 {
     "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
     "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
     "require": {
-        "php": ">=5.6.4",
+        "php": "^7.2",
         "bugsnag/bugsnag-laravel": "^2.0",
         "illuminated/db-profiler": "^6.0",
         "irazasyed/telegram-bot-sdk": "2.0.x-dev",
         "kaspars/hunter": "dev-master",
-        "laravel/framework": "^6.0",
-        "laravel/tinker": "~1.0"
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "^6.2",
+        "laravel/tinker": "^2.0"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "^8.5",
-        "filp/whoops": "~2.0"
+        "facade/ignition": "^1.4",
+        "fzaninotto/faker": "^1.4",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^3.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
     },
     "autoload": {
-        "classmap": [
-            "database"
-        ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "php artisan key:generate"
-        ],
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
-        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
         ]
-    },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
     }
 }

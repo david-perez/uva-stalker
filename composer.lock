@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8f65d1bfa8e253cfb66e1eafbe278aa",
+    "content-hash": "34d08208ac2b77c0dde5821904f784ef",
     "packages": [
         {
             "name": "bugsnag/bugsnag",
@@ -801,67 +801,6 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
-        },
-        {
-            "name": "illuminated/db-profiler",
-            "version": "6.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dmitry-ivanov/laravel-db-profiler.git",
-                "reference": "446ce0e84c707f800b101eee19edd007245e6d36"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-db-profiler/zipball/446ce0e84c707f800b101eee19edd007245e6d36",
-                "reference": "446ce0e84c707f800b101eee19edd007245e6d36",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "^6.0",
-                "illuminate/support": "^6.0",
-                "php": "^7.2"
-            },
-            "require-dev": {
-                "illuminated/helper-functions": "^6.0",
-                "illuminated/testing-tools": "^6.0",
-                "mockery/mockery": "^1.2",
-                "orchestra/testbench": "^4.0",
-                "phpunit/phpunit": "^8.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Illuminated\\Database\\DbProfilerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Illuminated\\Database\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Ivanov",
-                    "email": "dmitry.g.ivanov@gmail.com"
-                }
-            ],
-            "description": "DB profiling for Laravel web and console applications.",
-            "keywords": [
-                "database",
-                "db",
-                "laravel",
-                "mysql",
-                "profiler",
-                "profiling",
-                "sql"
-            ],
-            "time": "2019-09-13T21:33:29+00:00"
         },
         {
             "name": "irazasyed/telegram-bot-sdk",

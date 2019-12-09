@@ -10,7 +10,6 @@
     "require": {
         "php": "^7.2",
         "bugsnag/bugsnag-laravel": "^2.0",
-        "illuminated/db-profiler": "^6.0",
         "irazasyed/telegram-bot-sdk": "2.0.x-dev",
         "kaspars/hunter": "dev-master",
         "fideloper/proxy": "^4.0",

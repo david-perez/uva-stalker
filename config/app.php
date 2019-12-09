@@ -166,7 +166,6 @@ return [
          * Package Service Providers...
          */
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
-        Illuminated\Database\DbProfilerServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
 
         /*

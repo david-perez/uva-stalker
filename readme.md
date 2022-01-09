@@ -7,7 +7,13 @@ uva-stalker ![Telegram logo](http://i.imgur.com/vvekNMU.png) ![UVa logo](http://
 
 You simply tell it which users you want to follow, and it will send you notifications every time a user makes a new submission.
 
-An instance of the bot is already running and can be interacted with by chatting to [UVaStalkerBot](https://telegram.me/UVaStalkerBot), or you can clone this repo and set up the bot in your own server.
+~~An instance of the bot is already running and can be interacted with by chatting to [UVaStalkerBot](https://telegram.me/UVaStalkerBot), or~~ you can clone this repo and set up the bot in your own server.
+
+**NOTE**: Due to decreased usage of the bot (no new users in 2021) and
+decreasing popularity of https://onlinejudge.org/ (no new problems,
+unmaintained website functionality...), the bot has been shut down on January
+1, 2022. The code still works and you may set it up in a new Telegram bot
+account if you wish.
 
 ![UVaStalker screenshot 1](http://i.imgur.com/9M4fYOM.png)  ![UVaStalker screenshot 2](http://i.imgur.com/XMXjuOZ.png)
 
